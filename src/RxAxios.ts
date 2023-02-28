@@ -1,13 +1,16 @@
-import axios from "axios";
-import { from } from "rxjs";
+import axios, { type AxiosResponse } from "axios";
+import { from, type Observable, type ObservedValueOf } from "rxjs";
 
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
+type ObservableAxiosResponse<T> = Observable<
+  ObservedValueOf<Promise<AxiosResponse<T>>>
+>;
+
 class RxAxios {
-  get(url: string): any {
+  get<T = any>(url: string): ObservableAxiosResponse<T> {
     return from(axios.get(url));
   }
 
-  post(url: string): any {
+  post<T = any>(url: string): ObservableAxiosResponse<T> {
     return from(axios.post(url));
   }
 }

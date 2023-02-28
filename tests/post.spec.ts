@@ -1,4 +1,4 @@
-import { post } from "../src";
+import { post } from "@src/index";
 import axios from "axios";
 
 jest.mock("axios");

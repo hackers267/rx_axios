@@ -1,4 +1,4 @@
-import { sum } from "../src";
+import { sum } from "@src/index";
 
 describe("sum", function () {
   test("should be right", () => {
