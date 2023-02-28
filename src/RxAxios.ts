@@ -5,8 +5,11 @@ type ObservableAxiosResponse<T> = Observable<
   ObservedValueOf<Promise<AxiosResponse<T>>>
 >;
 
-type GetRequestConfig<T> = Omit<AxiosRequestConfig<T>, "url" | "method">;
-type PostRequestConfig<T> = Omit<AxiosRequestConfig<T>, "url" | "method">;
+export type GetRequestConfig<T> = Omit<AxiosRequestConfig<T>, "url" | "method">;
+export type PostRequestConfig<T> = Omit<
+  AxiosRequestConfig<T>,
+  "url" | "method"
+>;
 
 class RxAxios {
   get<T = any>(
