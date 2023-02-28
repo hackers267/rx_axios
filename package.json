@@ -3,13 +3,22 @@
   "version": "0.0.1",
   "description": "axios的rxjs包装",
   "main": "index.js",
+  "typings": "dist/index.d.ts",
   "module": "node",
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf dist",
-    "build": "npm run prebuild && rollup -c rollup.config.ts --configPlugin typescript"
+    "build": "npm run prebuild && rollup -c rollup.config.ts --configPlugin typescript",
+    "docs": "npm run build && api-extractor run --local"
   },
-  "keywords": [],
+  "files": [
+    "dist/index.js",
+    "dist/rx_axios.d.ts"
+  ],
+  "keywords": [
+    "rxjs",
+    "axios"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,6 +26,7 @@
     "rxjs": "^7.8.0"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.34.4",
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/jest": "^29.4.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",

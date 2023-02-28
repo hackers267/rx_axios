@@ -27,6 +27,8 @@ class RxAxios {
 
 const rxAxios = new RxAxios();
 
-export { rxAxios };
+const { get, post } = rxAxios;
+
+export { rxAxios, get, post };
 
 export default RxAxios;
