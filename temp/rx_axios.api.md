@@ -12,23 +12,23 @@ import { ObservedValueOf } from 'rxjs';
 // Warning: (ae-forgotten-export) The symbol "GetRequestConfig" needs to be exported by the entry point index.d.ts
 // Warning: (ae-forgotten-export) The symbol "ObservableAxiosResponse" needs to be exported by the entry point index.d.ts
 //
-// @public (undocumented)
+// @public
 export const get: <T = any>(url: string, config?: GetRequestConfig<any>) => ObservableAxiosResponse<T>;
 
 // Warning: (ae-forgotten-export) The symbol "PostRequestConfig" needs to be exported by the entry point index.d.ts
 //
-// @public (undocumented)
+// @public
 export const post: <T = any>(url: string, data?: any, config?: PostRequestConfig<any>) => ObservableAxiosResponse<T>;
 
-// @public (undocumented)
+// @public
 export class RxAxios {
-    // (undocumented)
     get<T = any>(url: string, config?: GetRequestConfig<any>): ObservableAxiosResponse<T>;
-    // (undocumented)
     post<T = any>(url: string, data?: any, config?: PostRequestConfig<any>): ObservableAxiosResponse<T>;
 }
 
-// @public (undocumented)
+// Warning: (ae-internal-missing-underscore) The name "sum" should be prefixed with an underscore because the declaration is marked as @internal
+//
+// @internal (undocumented)
 export function sum(a: number, b: number): number;
 
 // (No @packageDocumentation comment for this package)

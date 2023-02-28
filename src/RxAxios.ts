@@ -11,13 +11,31 @@ export type PostRequestConfig<T> = Omit<
   "url" | "method"
 >;
 
+/**
+ * Axios的RxJs包装器
+ * @public
+ */
 class RxAxios {
+  /**
+   * Get请求
+   * @public
+   * @param url - 请求地址
+   * @param config - 请求配置
+   */
   get<T = any>(
     url: string,
     config?: GetRequestConfig<any>
   ): ObservableAxiosResponse<T> {
     return from(axios.get(url, config));
   }
+
+  /**
+   * Post请求
+   * @public
+   * @param url - 请求地址
+   * @param data - 请求体数据
+   * @param config - 请求配置
+   */
 
   post<T = any>(
     url: string,
@@ -30,7 +48,16 @@ class RxAxios {
 
 const rxAxios = new RxAxios();
 
-const { get, post } = rxAxios;
+/**
+ * 独立的GET请求
+ * @public
+ */
+const get = rxAxios.get;
+/**
+ * 独立的POST请求
+ * @public
+ */
+const post = rxAxios.post;
 
 export { rxAxios, get, post };
 
