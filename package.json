@@ -8,7 +8,7 @@
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf dist",
-    "build": "npm run prebuild && rollup -c rollup.config.ts --configPlugin typescript",
+    "build": "npm run test && npm run prebuild && rollup -c rollup.config.ts --configPlugin typescript",
     "docs": "npm run build && api-extractor run --local"
   },
   "files": [
