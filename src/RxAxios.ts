@@ -1,5 +1,5 @@
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
-import { from, type Observable, type ObservedValueOf } from "rxjs";
+import { catchError, from, type Observable, type ObservedValueOf } from "rxjs";
 
 type ObservableAxiosResponse<T> = Observable<
   ObservedValueOf<Promise<AxiosResponse<T>>>
@@ -26,7 +26,11 @@ class RxAxios {
     url: string,
     config?: GetRequestConfig<any>
   ): ObservableAxiosResponse<T> {
-    return from(axios.get(url, config));
+    return from(axios.get(url, config)).pipe(
+      catchError((err) => {
+        throw new Error(err);
+      })
+    );
   }
 
   /**

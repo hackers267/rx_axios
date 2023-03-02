@@ -13,4 +13,14 @@ describe("RxAxios Get", () => {
       done();
     });
   });
+
+  test("with error", (done) => {
+    mockedAxios.get.mockRejectedValue("error");
+    get("/api/v1").subscribe({
+      error(e) {
+        expect(e.message).toEqual("error");
+        done();
+      },
+    });
+  });
 });
