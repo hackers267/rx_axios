@@ -1,13 +1,26 @@
 import axios, { type AxiosRequestConfig, type AxiosResponse } from "axios";
-import { catchError, from, type Observable, type ObservedValueOf } from "rxjs";
+import {
+  catchError,
+  from,
+  map,
+  type Observable,
+  type ObservedValueOf,
+} from "rxjs";
 
 type ObservableAxiosResponse<T> = Observable<
   ObservedValueOf<Promise<AxiosResponse<T>>>
 >;
 
-export type GetRequestConfig<T> = Omit<AxiosRequestConfig<T>, "url" | "method">;
+interface CustomConfig {
+  getResponse?: boolean;
+}
+
+export type GetRequestConfig<T> = Omit<
+  AxiosRequestConfig<T> & CustomConfig,
+  "url" | "method"
+>;
 export type PostRequestConfig<T> = Omit<
-  AxiosRequestConfig<T>,
+  AxiosRequestConfig<T> & CustomConfig,
   "url" | "method"
 >;
 
@@ -24,9 +37,11 @@ class RxAxios {
    */
   get<T = any>(
     url: string,
-    config?: GetRequestConfig<any>
+    config: GetRequestConfig<any> = { getResponse: false }
   ): ObservableAxiosResponse<T> {
+    const { getResponse } = config;
     return from(axios.get(url, config)).pipe(
+      map((res) => (getResponse === true ? res : res.data)),
       catchError((err) => {
         throw new Error(err);
       })
@@ -44,9 +59,12 @@ class RxAxios {
   post<T = any>(
     url: string,
     data?: any,
-    config?: PostRequestConfig<any>
+    config: PostRequestConfig<any> = { getResponse: false }
   ): ObservableAxiosResponse<T> {
-    return from(axios.post(url, data, config));
+    const { getResponse } = config;
+    return from(axios.post(url, data, config)).pipe(
+      map((res) => (getResponse === true ? res : res.data))
+    );
   }
 }
 

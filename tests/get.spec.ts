@@ -6,10 +6,19 @@ jest.mock("axios");
 const mockedAxios = jest.mocked(axios);
 
 describe("RxAxios Get", () => {
+  const mockData: { data: { success: boolean } } = { data: { success: true } };
   test("Simple", (done) => {
-    mockedAxios.get.mockResolvedValue({ success: true });
+    mockedAxios.get.mockResolvedValue(mockData);
     get("api/v1").subscribe((x) => {
-      expect(x).toEqual({ success: true });
+      expect(x).toEqual(mockData.data);
+      done();
+    });
+  });
+
+  test("with getResponse", (done) => {
+    mockedAxios.get.mockResolvedValue(mockData);
+    get("/api/v1", { getResponse: true }).subscribe((x) => {
+      expect(x).toEqual(mockData);
       done();
     });
   });
