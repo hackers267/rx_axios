@@ -4,10 +4,10 @@ import axios from "axios";
 jest.mock("axios");
 const mockedAxios = jest.mocked(axios);
 
-describe("RxAxios POST", () => {
+describe("RxAxios POST with success", () => {
   const mockData: { data: { success: boolean } } = { data: { success: true } };
+  mockedAxios.post.mockResolvedValue(mockData);
   test("simple", (done) => {
-    mockedAxios.post.mockResolvedValue(mockData);
     post("/api/v1").subscribe({
       next(v: any) {
         expect(v).toEqual(mockData.data);
@@ -16,7 +16,6 @@ describe("RxAxios POST", () => {
     });
   });
   test("with getResponse", (done) => {
-    mockedAxios.post.mockResolvedValue(mockData);
     post("/api/v1", {}, { getResponse: true }).subscribe({
       next(v: any) {
         expect(v).toEqual(mockData);
