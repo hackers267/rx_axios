@@ -1,4 +1,4 @@
-import axios, { type AxiosInstance } from "axios";
+import axios from "axios";
 import { RxAxios } from "@src/index";
 
 jest.mock("axios");
@@ -7,14 +7,10 @@ const mockedAxios = jest.mocked(axios);
 
 describe("RxAxios Get with success", () => {
   const mockData: { data: { success: boolean } } = { data: { success: true } };
-  const mock: AxiosInstance = {
-    async get() {
-      return mockData as any;
-    },
-  } as any;
-  mockedAxios.create.mockReturnValue(mock);
-  const rxAxios = RxAxios.of({});
+  mockedAxios.create.mockReturnValue(axios);
+  mockedAxios.get.mockResolvedValue(mockData);
   test("Simple", (done) => {
+    const rxAxios = RxAxios.of({});
     rxAxios.get("api/v1").subscribe((x) => {
       expect(x).toEqual(mockData.data);
       done();
@@ -22,6 +18,7 @@ describe("RxAxios Get with success", () => {
   });
 
   test("with getResponse", (done) => {
+    const rxAxios = RxAxios.of({});
     rxAxios.get("/api/v1", { getResponse: true }).subscribe((x) => {
       expect(x).toEqual(mockData);
       done();
@@ -29,8 +26,10 @@ describe("RxAxios Get with success", () => {
   });
 });
 describe("RxAxios Get with Error", () => {
-  mockedAxios.create.mockReturnValue(axios);
-  mockedAxios.get.mockRejectedValue("error");
+  beforeAll(() => {
+    mockedAxios.create.mockReturnValue(axios);
+    mockedAxios.get.mockRejectedValue("error");
+  });
   const rxAxios = RxAxios.of();
   test("with error", (done) => {
     rxAxios.get("/api/v1").subscribe({
