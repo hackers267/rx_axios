@@ -68,8 +68,11 @@ class RxAxios {
     url: string,
     config: GetRequestConfig<any> = { getResponse: false }
   ): ObservableAxiosResponse<T> {
-    const { getResponse } = config;
-    return from(this.axios.get(url, config)).pipe(
+    const { getResponse, ...rest } = config;
+    const length = Object.keys(rest).length;
+    const request =
+      length > 0 ? this.axios.get(url, rest) : this.axios.get(url);
+    return from(request).pipe(
       map((res) => (getResponse === true ? res : res.data)),
       catchError((err) => {
         throw new Error(err);
