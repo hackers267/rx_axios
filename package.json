@@ -4,7 +4,7 @@
   "description": "axios的rxjs包装",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "typings": "dist/rx_axios.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "prebuild": "rimraf dist",
@@ -13,8 +13,10 @@
   },
   "files": [
     "dist/index.js",
-    "lib/index.js",
-    "dist/rx_axios.d.ts"
+    "dist/index.esm.js",
+    "dist/index.aio.js",
+    "dist/RxAxios.d.ts",
+    "dist/index.d.ts"
   ],
   "keywords": [
     "rxjs",
