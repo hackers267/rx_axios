@@ -1,3 +1,3 @@
-import RxAxios, { get, post } from "./RxAxios";
+import RxAxios from "./RxAxios";
 
-export { RxAxios, get, post };
+export { RxAxios };
