@@ -26,3 +26,19 @@ describe("RxAxios POST with success", () => {
     });
   });
 });
+
+describe("RxAxios POST with config", () => {
+  const mockData: { data: { success: boolean } } = { data: { success: true } };
+  mockedAxios.create.mockReturnValue(axios);
+  mockedAxios.post.mockResolvedValue(mockData);
+  const rxAxios = RxAxios.of();
+  test("with baseUrl", () => {
+    rxAxios.post("/v1", {}, { baseURL: "/api" }).subscribe((v) => {
+      expect(mockedAxios.post).toHaveBeenCalledWith(
+        "/v1",
+        {},
+        { baseURL: "/api" }
+      );
+    });
+  });
+});

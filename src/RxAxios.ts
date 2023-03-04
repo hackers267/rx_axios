@@ -93,8 +93,13 @@ class RxAxios {
     data?: any,
     config: PostRequestConfig<any> = { getResponse: false }
   ): ObservableAxiosResponse<T> {
-    const { getResponse } = config;
-    return from(this.axios.post(url, data, config)).pipe(
+    const { getResponse, ...rest } = config;
+    const length = Object.keys(rest).length;
+    const request =
+      length > 0
+        ? this.axios.post(url, data, rest)
+        : this.axios.post(url, data);
+    return from(request).pipe(
       map((res) => (getResponse === true ? res : res.data))
     );
   }
