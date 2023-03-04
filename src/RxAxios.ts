@@ -20,14 +20,14 @@ interface CustomConfig {
   getResponse?: boolean;
 }
 
-export type GetRequestConfig<T> = Omit<
+export type RequestConfig<T> = Omit<
   AxiosRequestConfig<T> & CustomConfig,
   "url" | "method"
 >;
-export type PostRequestConfig<T> = Omit<
-  AxiosRequestConfig<T> & CustomConfig,
-  "url" | "method"
->;
+export type GetRequestConfig<T> = RequestConfig<T>;
+export type PostRequestConfig<T> = RequestConfig<T>;
+export type DeleteRequestConfig<T> = RequestConfig<T>;
+export type PutRequestConfig<T> = RequestConfig<T>;
 
 /**
  * Axios的RxJs包装器
@@ -111,10 +111,27 @@ class RxAxios {
    */
   delete<T = any>(
     url: string,
-    config: GetRequestConfig<T> = { getResponse: false }
+    config: DeleteRequestConfig<T> = { getResponse: false }
   ): ObservableAxiosResponse<T> {
     const { getResponse } = config;
     return from(this.axios.delete(url, config)).pipe(
+      map((res) => (getResponse === true ? res : res.data))
+    );
+  }
+
+  /**
+   * PUT请求
+   * @param url - 请求地址
+   * @param data - (可选)请求数据
+   * @param config - (可选)请求配置
+   */
+  put<T = any>(
+    url: string,
+    data?: any,
+    config: PutRequestConfig<T> = { getResponse: false }
+  ): ObservableAxiosResponse<T> {
+    const { getResponse } = config;
+    return from(this.axios.put(url, data, config)).pipe(
       map((res) => (getResponse === true ? res : res.data))
     );
   }
