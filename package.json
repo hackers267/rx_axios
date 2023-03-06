@@ -1,5 +1,5 @@
 {
-  "name": "rx_axios",
+  "name": "@silence_zhpf/rx_axios",
   "version": "0.0.1-alpha",
   "description": "axios的rxjs包装",
   "main": "dist/index.js",
@@ -22,6 +22,9 @@
     "rxjs",
     "axios"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "silence_zhpf@aliyun.com",
   "license": "MIT",
   "dependencies": {
