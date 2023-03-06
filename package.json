@@ -25,6 +25,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "url": "https://github.com/hackers267/rx_axios"
+  },
   "author": "silence_zhpf@aliyun.com",
   "license": "MIT",
   "dependencies": {
