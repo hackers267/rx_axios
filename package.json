@@ -1,6 +1,6 @@
 {
   "name": "rx_axios",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha",
   "description": "axios的rxjs包装",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
