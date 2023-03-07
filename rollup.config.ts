@@ -29,6 +29,7 @@ export default defineConfig([
         axios: "axios",
         rxjs: "rxjs",
       },
+      exports: "named",
     },
     external: ["axios", "rxjs"],
     plugins: [typescript()],
