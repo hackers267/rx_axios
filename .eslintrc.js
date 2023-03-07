@@ -7,6 +7,7 @@ module.exports = {
   extends: ["standard-with-typescript", "prettier"],
   plugins: ["prettier"],
   overrides: [],
+  ignorePatterns: ["libs", "rollup.config.ts"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
