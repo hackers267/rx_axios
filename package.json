@@ -1,6 +1,6 @@
 {
   "name": "@silence_zhpf/rx_axios",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2-alpha.1",
   "description": "axios的rxjs包装",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -11,10 +11,10 @@
     "clean": "rimraf dist coverage",
     "docs": "npm run build && api-extractor run --local",
     "package": "rollup -c rollup.config.ts --configPlugin typescript",
-    "release:major": "npm run build && standard-version -r major",
-    "release:minor": "npm run build && standard-version -r minor",
-    "prerelease:alpha": "npm run build && standard-version -p alpha",
-    "prerelease:beta": "npm run build && standard-version -p beta",
+    "release:major": "npm run build && npm run api && standard-version -r major",
+    "release:minor": "npm run build && npm run api && standard-version -r minor",
+    "prerelease:alpha": "npm run build && npm run api && standard-version -p alpha",
+    "prerelease:beta": "npm run build && npm run api && standard-version -p beta",
     "test": "jest"
   },
   "files": [
