@@ -36,14 +36,12 @@ export type PutRequestConfig<T> = RequestConfig<T>;
 class RxAxios {
   /**
    * 内部的axios
-   * @private
    */
   private readonly axios: AxiosInstance;
 
   /**
    * 创建一个RxAxios实例
    * @param config - (可选)axios配置
-   * @private
    */
   private constructor(config?: CreateAxiosDefaults) {
     this.axios = axios.create(config);
