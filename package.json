@@ -6,10 +6,12 @@
   "module": "dist/index.esm.js",
   "typings": "dist/rx_axios.d.ts",
   "scripts": {
-    "test": "jest",
-    "prebuild": "rimraf dist",
-    "build": "npm run test && npm run prebuild && rollup -c rollup.config.ts --configPlugin typescript",
-    "docs": "npm run build && api-extractor run --local"
+    "api": "api-extractor run --local",
+    "build": "npm run clean && npm run test && npm run package",
+    "clean": "rimraf dist coverage",
+    "docs": "npm run build && api-extractor run --local",
+    "package": "rollup -c rollup.config.ts --configPlugin typescript",
+    "test": "jest"
   },
   "files": [
     "dist/index.js",
