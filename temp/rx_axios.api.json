@@ -161,102 +161,20 @@
     }
   },
   "kind": "Package",
-  "canonicalReference": "rx_axios!",
+  "canonicalReference": "@silence_zhpf/rx_axios!",
   "docComment": "",
-  "name": "rx_axios",
+  "name": "@silence_zhpf/rx_axios",
   "preserveMemberOrder": false,
   "members": [
     {
       "kind": "EntryPoint",
-      "canonicalReference": "rx_axios!",
+      "canonicalReference": "@silence_zhpf/rx_axios!",
       "name": "",
       "preserveMemberOrder": false,
       "members": [
         {
-          "kind": "Variable",
-          "canonicalReference": "rx_axios!get:var",
-          "docComment": "/**\n * 独立的GET请求\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "get: "
-            },
-            {
-              "kind": "Content",
-              "text": "<T = any>(url: string, config?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "GetRequestConfig",
-              "canonicalReference": "rx_axios!~GetRequestConfig:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<any>) => "
-            },
-            {
-              "kind": "Reference",
-              "text": "ObservableAxiosResponse",
-              "canonicalReference": "rx_axios!~ObservableAxiosResponse:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>"
-            }
-          ],
-          "fileUrlPath": "dist/RxAxios.d.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "get",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 6
-          }
-        },
-        {
-          "kind": "Variable",
-          "canonicalReference": "rx_axios!post:var",
-          "docComment": "/**\n * 独立的POST请求\n *\n * @public\n */\n",
-          "excerptTokens": [
-            {
-              "kind": "Content",
-              "text": "post: "
-            },
-            {
-              "kind": "Content",
-              "text": "<T = any>(url: string, data?: any, config?: "
-            },
-            {
-              "kind": "Reference",
-              "text": "PostRequestConfig",
-              "canonicalReference": "rx_axios!~PostRequestConfig:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<any>) => "
-            },
-            {
-              "kind": "Reference",
-              "text": "ObservableAxiosResponse",
-              "canonicalReference": "rx_axios!~ObservableAxiosResponse:type"
-            },
-            {
-              "kind": "Content",
-              "text": "<T>"
-            }
-          ],
-          "fileUrlPath": "dist/RxAxios.d.ts",
-          "isReadonly": true,
-          "releaseTag": "Public",
-          "name": "post",
-          "variableTypeTokenRange": {
-            "startIndex": 1,
-            "endIndex": 6
-          }
-        },
-        {
           "kind": "Class",
-          "canonicalReference": "rx_axios!RxAxios:class",
+          "canonicalReference": "@silence_zhpf/rx_axios!RxAxios:class",
           "docComment": "/**\n * Axios的RxJs包装器\n *\n * @public\n */\n",
           "excerptTokens": [
             {
@@ -272,8 +190,103 @@
           "members": [
             {
               "kind": "Method",
-              "canonicalReference": "rx_axios!RxAxios#get:member(1)",
-              "docComment": "/**\n * Get请求\n *\n * @param url - 请求地址\n *\n * @param config - 请求配置\n *\n * @public\n */\n",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios#delete:member(1)",
+              "docComment": "/**\n * Delete请求\n *\n * @param url - 请求地址\n *\n * @param config - (可选)请求配置\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "delete<T = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(url: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", config?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DeleteRequestConfig",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~DeleteRequestConfig:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ObservableAxiosResponse",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ObservableAxiosResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "url",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "config",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 7
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "delete"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios#get:member(1)",
+              "docComment": "/**\n * Get请求\n *\n * @param url - 请求地址\n *\n * @param config - (可选)请求配置\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -298,7 +311,7 @@
                 {
                   "kind": "Reference",
                   "text": "GetRequestConfig",
-                  "canonicalReference": "rx_axios!~GetRequestConfig:type"
+                  "canonicalReference": "@silence_zhpf/rx_axios!~GetRequestConfig:type"
                 },
                 {
                   "kind": "Content",
@@ -311,7 +324,7 @@
                 {
                   "kind": "Reference",
                   "text": "ObservableAxiosResponse",
-                  "canonicalReference": "rx_axios!~ObservableAxiosResponse:type"
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ObservableAxiosResponse:type"
                 },
                 {
                   "kind": "Content",
@@ -367,8 +380,58 @@
             },
             {
               "kind": "Method",
-              "canonicalReference": "rx_axios!RxAxios#post:member(1)",
-              "docComment": "/**\n * Post请求\n *\n * @param url - 请求地址\n *\n * @param data - 请求体数据\n *\n * @param config - 请求配置\n *\n * @public\n */\n",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios.of:member(1)",
+              "docComment": "/**\n * 创建一个RxAxios实例\n *\n * @param config - (可选),axios配置\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static of(config?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CreateAxiosDefaults",
+                  "canonicalReference": "axios!CreateAxiosDefaults:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RxAxios",
+                  "canonicalReference": "@silence_zhpf/rx_axios!RxAxios:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "config",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "of"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios#post:member(1)",
+              "docComment": "/**\n * Post请求\n *\n * @param url - 请求地址\n *\n * @param data - (可选)请求体数据\n *\n * @param config - (可选)请求配置\n *\n * @public\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",
@@ -401,7 +464,7 @@
                 {
                   "kind": "Reference",
                   "text": "PostRequestConfig",
-                  "canonicalReference": "rx_axios!~PostRequestConfig:type"
+                  "canonicalReference": "@silence_zhpf/rx_axios!~PostRequestConfig:type"
                 },
                 {
                   "kind": "Content",
@@ -414,7 +477,7 @@
                 {
                   "kind": "Reference",
                   "text": "ObservableAxiosResponse",
-                  "canonicalReference": "rx_axios!~ObservableAxiosResponse:type"
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ObservableAxiosResponse:type"
                 },
                 {
                   "kind": "Content",
@@ -475,9 +538,144 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "post"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios#put:member(1)",
+              "docComment": "/**\n * PUT请求\n *\n * @param url - 请求地址\n *\n * @param data - (可选)请求数据\n *\n * @param config - (可选)请求配置\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "put<T = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">(url: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", data?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", config?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PutRequestConfig",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~PutRequestConfig:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ObservableAxiosResponse",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ObservableAxiosResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<T>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "typeParameters": [
+                {
+                  "typeParameterName": "T",
+                  "constraintTokenRange": {
+                    "startIndex": 0,
+                    "endIndex": 0
+                  },
+                  "defaultTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  }
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 12
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "url",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "data",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "config",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 9
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "put"
             }
           ],
           "implementsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@silence_zhpf/rx_axios!rxAxios:var",
+          "docComment": "/**\n * 默认的RxAxios实例\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "rxAxios: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RxAxios",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios:class"
+            }
+          ],
+          "fileUrlPath": "dist/index.d.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "rxAxios",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
         }
       ]
     }
