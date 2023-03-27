@@ -4,7 +4,7 @@
   "description": "axios的rxjs包装",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
-  "typings": "dist/rx_axios.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "api": "api-extractor run --local",
     "build": "npm run clean && npm run test && npm run package",
@@ -21,7 +21,7 @@
     "dist/index.js",
     "dist/index.esm.js",
     "dist/index.aio.js",
-    "dist/rx_axios.d.ts",
+    "dist/RxAxios.d.ts",
     "dist/index.d.ts"
   ],
   "keywords": [
