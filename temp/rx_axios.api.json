@@ -649,6 +649,138 @@
               "isOptional": false,
               "isAbstract": false,
               "name": "put"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios#requestInterceptor:member(1)",
+              "docComment": "/**\n * 添加请求拦截器\n *\n * @param fulfilled - 拦截器正常处理函数\n *\n * @param rejected - 拦截器错误处理函数\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requestInterceptor(fulfilled?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReqInterceptorFun",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ReqInterceptorFun:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", rejected?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ReqRejected",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ReqRejected:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "fulfilled",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "rejected",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "requestInterceptor"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@silence_zhpf/rx_axios!RxAxios#responseInterceptor:member(1)",
+              "docComment": "/**\n * 添加响应拦截器\n *\n * @param fulfilled - 拦截器正常处理函数\n *\n * @param rejected - 拦截器错误处理函数\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "responseInterceptor(fulfilled?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ResInterceptorFun",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ResInterceptorFun:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", rejected?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ResRejected",
+                  "canonicalReference": "@silence_zhpf/rx_axios!~ResRejected:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Content",
+                  "text": "void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "fulfilled",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                },
+                {
+                  "parameterName": "rejected",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "responseInterceptor"
             }
           ],
           "implementsTokenRanges": []

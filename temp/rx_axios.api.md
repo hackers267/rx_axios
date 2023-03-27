@@ -7,6 +7,7 @@
 import { AxiosRequestConfig } from 'axios';
 import { AxiosResponse } from 'axios';
 import { CreateAxiosDefaults } from 'axios';
+import { InternalAxiosRequestConfig } from 'axios';
 import { Observable } from 'rxjs';
 import { ObservedValueOf } from 'rxjs';
 
@@ -22,6 +23,12 @@ export class RxAxios {
     post<T = any>(url: string, data?: any, config?: PostRequestConfig<any>): ObservableAxiosResponse<T>;
     // Warning: (ae-forgotten-export) The symbol "PutRequestConfig" needs to be exported by the entry point index.d.ts
     put<T = any>(url: string, data?: any, config?: PutRequestConfig<T>): ObservableAxiosResponse<T>;
+    // Warning: (ae-forgotten-export) The symbol "ReqInterceptorFun" needs to be exported by the entry point index.d.ts
+    // Warning: (ae-forgotten-export) The symbol "ReqRejected" needs to be exported by the entry point index.d.ts
+    requestInterceptor(fulfilled?: ReqInterceptorFun, rejected?: ReqRejected): void;
+    // Warning: (ae-forgotten-export) The symbol "ResInterceptorFun" needs to be exported by the entry point index.d.ts
+    // Warning: (ae-forgotten-export) The symbol "ResRejected" needs to be exported by the entry point index.d.ts
+    responseInterceptor(fulfilled?: ResInterceptorFun, rejected?: ResRejected): void;
 }
 
 // @public

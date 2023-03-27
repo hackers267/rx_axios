@@ -3,6 +3,7 @@ import axios, {
   type AxiosRequestConfig,
   type AxiosResponse,
   type CreateAxiosDefaults,
+  type InternalAxiosRequestConfig,
 } from "axios";
 import {
   catchError,
@@ -29,6 +30,26 @@ export type PostRequestConfig<T> = RequestConfig<T>;
 export type DeleteRequestConfig<T> = RequestConfig<T>;
 export type PutRequestConfig<T> = RequestConfig<T>;
 
+type ReqInterceptorFun =
+  | ((
+      value: InternalAxiosRequestConfig<any>
+    ) =>
+      | InternalAxiosRequestConfig<any>
+      | Promise<InternalAxiosRequestConfig<any>>)
+  | null
+  | undefined;
+
+type ResInterceptorFun =
+  | ((
+      value: AxiosResponse<any, any>
+    ) => AxiosResponse<any, any> | Promise<AxiosResponse<any, any>>)
+  | null
+  | undefined;
+
+type ReqRejected = ((error: any) => any) | null | undefined;
+
+type ResRejected = ((error: any) => any) | null | undefined;
+
 /**
  * Axios的RxJs包装器
  * @public
@@ -54,6 +75,32 @@ class RxAxios {
    */
   static of(config?: CreateAxiosDefaults): RxAxios {
     return new RxAxios(config);
+  }
+
+  /**
+   * 添加请求拦截器
+   * @public
+   * @param fulfilled - 拦截器正常处理函数
+   * @param rejected - 拦截器错误处理函数
+   */
+  requestInterceptor(
+    fulfilled?: ReqInterceptorFun,
+    rejected?: ReqRejected
+  ): void {
+    this.axios.interceptors.request.use(fulfilled, rejected);
+  }
+
+  /**
+   * 添加响应拦截器
+   * @public
+   * @param fulfilled - 拦截器正常处理函数
+   * @param rejected - 拦截器错误处理函数
+   */
+  responseInterceptor(
+    fulfilled?: ResInterceptorFun,
+    rejected?: ResRejected
+  ): void {
+    this.axios.interceptors.response.use(fulfilled, rejected);
   }
 
   /**
