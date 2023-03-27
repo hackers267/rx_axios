@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2-alpha.2](https://github.com/hackers267/rx_axios/compare/v0.0.2-alpha.1...v0.0.2-alpha.2) (2023-03-27)
+
+
+### Features
+
+* ✨ 添加拦截器 ([a49466d](https://github.com/hackers267/rx_axios/commit/a49466d9766fcb7c39c039eda5a3de9eec59ecdd))
+
 ### [0.0.2-alpha.1](https://github.com/hackers267/rx_axios/compare/v0.0.2-alpha.0...v0.0.2-alpha.1) (2023-03-07)
 
 ### 0.0.2-alpha.0 (2023-03-07)
