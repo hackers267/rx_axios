@@ -7,7 +7,9 @@ export default defineConfig([
     output: {
       format: "cjs",
       file: "dist/index.js",
+      exports: "named",
     },
+    external: ["axios", "rxjs"],
     plugins: [typescript({})],
   },
   {
